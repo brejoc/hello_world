@@ -20,8 +20,8 @@ License:        GPL-2.0+
 Group:          Development/Tools/Building
 Url:            https://github.com/ChrisBr/hello-fosdem
 Source:         %{name}-%{version}.tar.bz2
-Requires:  	bash
-Requires:  	tar
+Requires:  	    ruby
+Requires:  	    tar
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildArch:      noarch
 
@@ -29,14 +29,13 @@ BuildArch:      noarch
 Hello world application for OBS workshop
 
 %prep
-#%setup -q
+%setup -q
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_prefix}/bin
 install -m 755 hello-world %{buildroot}%{_prefix}/bin
-
 
 %files
 %defattr(-,root,root)
